@@ -3,287 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enchant Couture | Official Website</title>
-
-<style>
-:root {
-    --primary: #000;
-    --secondary: #f5f5f5;
-    --accent: #c8a165;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-body {
-    background: white;
-    color: #222;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: white;
-    border-bottom: 1px solid #eee;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 1.4rem;
-    letter-spacing: 3px;
-    font-weight: 600;
-}
-
-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #222;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-nav a:hover {
-    color: var(--accent);
-}
-
-.hero {
-    height: 100vh;
-    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
-    url('https://images.unsplash.com/photo-1520975916090-3105956dac38') center/cover no-repeat;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
-    margin-top: 80px;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    max-width: 500px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    padding: 12px 28px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: var(--accent);
-}
-
-section {
-    padding: 100px 8%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 60px;
-}
-
-.grid {
-    display: grid;
-    gap: 40px;
-}
-
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.card h3 {
-    margin: 15px 0 5px;
-}
-
-.price {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.about {
-    background: var(--secondary);
-    text-align: center;
-}
-
-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-form input, form textarea, form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-}
-
-.cart-count {
-    background: black;
-    color: white;
-    padding: 2px 6px;
-    font-size: 0.8rem;
-    border-radius: 50%;
-}
-
-footer {
-    background: black;
-    color: #aaa;
-    padding: 40px 8%;
-    text-align: center;
-}
-
-@media(max-width:768px){
-    .hero-content h1 { font-size: 2.2rem; }
-}
-</style>
+<title>Enchant Couture</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 
 <body>
 
 <header>
-<div class="logo">ENCHANT COUTURE</div>
-<nav>
-<a href="#about">About</a>
-<a href="#design">Design</a>
-<a href="#sizes">Sizes</a>
-<a href="#collections">Collections</a>
-<a href="#shop">Shop</a>
-<a href="#bespoke">Bespoke</a>
-<a href="#contact">Contact</a>
-<a href="#">Cart <span class="cart-count" id="cartCount">0</span></a>
-</nav>
+    <div class="logo">ENCHANT COUTURE</div>
+    <nav>
+        <a href="#shop">Shop</a>
+        <a href="#bespoke">Bespoke</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Timeless Craftsmanship for Women & Girls</h1>
-<p>Explore ready-made collections or commission a bespoke design tailored exclusively for you.</p>
-<button class="btn" onclick="document.getElementById('shop').scrollIntoView()">Shop Collection</button>
-</div>
-</section>
-
-<section id="about" class="about">
-<h2 class="section-title">About Enchant Couture</h2>
-<p>Enchant Couture is a contemporary fashion house dedicated to refined silhouettes, detailed craftsmanship, and empowering expression for women and the girl child. Designed in Lagos with global elegance in mind.</p>
-</section>
-
-<section id="design">
-<h2 class="section-title">Shop by Design</h2>
-<div class="grid grid-3">
-<div class="card"><h3>Casual</h3></div>
-<div class="card"><h3>Corporate</h3></div>
-<div class="card"><h3>Luxury / Occasion</h3></div>
-</div>
-</section>
-
-<section id="sizes">
-<h2 class="section-title">Shop by Size</h2>
-<div class="grid grid-3">
-<div class="card"><h3>Girls</h3></div>
-<div class="card"><h3>Teens</h3></div>
-<div class="card"><h3>Women</h3></div>
-</div>
-</section>
-
-<section id="collections">
-<h2 class="section-title">Featured Collections</h2>
-<div class="grid grid-3">
-<div class="card"><h3>Spring / Summer Edit</h3></div>
-<div class="card"><h3>Signature Capsule</h3></div>
-<div class="card"><h3>Evening Statement</h3></div>
-</div>
+    <div class="hero-content">
+        <h1>Elegance for Women & Girls</h1>
+        <p>Shop ready-made looks or request a custom design.</p>
+        <button onclick="scrollToShop()">Shop Now</button>
+    </div>
 </section>
 
 <section id="shop">
-<h2 class="section-title">Ready-Made Pieces</h2>
-<div class="grid grid-3">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-<h3>Ivory Luxe Dress</h3>
-<p class="price">₦85,000</p>
-<button class="btn" onclick="addToCart()">Add to Cart</button>
-</div>
+    <h2>Ready-Made Collection</h2>
+    <div class="product-grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-<h3>Corporate Chic Set</h3>
-<p class="price">₦72,000</p>
-<button class="btn" onclick="addToCart()">Add to Cart</button>
-</div>
+        <div class="product">
+            <img src="images/dress1.jpg">
+            <h3>Ivory Luxe Dress</h3>
+            <p>₦85,000</p>
+            <button onclick="addToCart('Ivory Luxe Dress', 85000)">Add to Cart</button>
+        </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc">
-<h3>Modern Casual Dress</h3>
-<p class="price">₦55,000</p>
-<button class="btn" onclick="addToCart()">Add to Cart</button>
-</div>
-</div>
+        <div class="product">
+            <img src="images/dress2.jpg">
+            <h3>Corporate Chic Set</h3>
+            <p>₦72,000</p>
+            <button onclick="addToCart('Corporate Chic Set', 72000)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: ₦<span id="cartTotal">0</span></h3>
+    <button onclick="payWithPaystack()">Checkout & Pay</button>
 </section>
 
 <section id="bespoke">
-<h2 class="section-title">Bespoke Consultation</h2>
-<form>
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email Address" required>
-<select required>
-<option value="">Select Category</option>
-<option>Girls</option>
-<option>Teens</option>
-<option>Women</option>
-</select>
-<textarea rows="5" placeholder="Describe your desired design"></textarea>
-<button class="btn" type="submit">Submit Request</button>
-</form>
+    <h2>Bespoke Consultation</h2>
+    <form id="bespokeForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Describe your design idea"></textarea>
+        <button type="submit">Submit Request</button>
+    </form>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Contact</h2>
-<div style="text-align:center;">
-<p>Email: info@enchantcouture.com</p>
-<p>Instagram: @enchantcouture</p>
-<p>Lagos, Nigeria</p>
-</div>
+    <h2>Contact</h2>
+    <p>Email: info@enchantcouture.com</p>
+    <p>Lagos, Nigeria</p>
 </section>
 
 <footer>
-<p>© 2026 Enchant Couture. All Rights Reserved.</p>
+    <p>© 2026 Enchant Couture</p>
 </footer>
 
-<script>
-let cart = 0;
-function addToCart() {
-    cart++;
-    document.getElementById("cartCount").innerText = cart;
-}
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
